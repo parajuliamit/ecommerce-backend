@@ -126,7 +126,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER' : 'amit',
-        'PASSWORD' : os.environ.get('DB_PASS'),
+        'PASSWORD' : os.getenv('DB_PASS'),
         'HOST' : 'amit.postgres.database.azure.com',
         'PORT' : '5432',
     }
@@ -182,6 +182,3 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-if os.getcwd() == '/app':
-    DEBUG = False
