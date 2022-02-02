@@ -10,8 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
+from ecommerce.middle import DisableCSRFMiddleware
 from datetime import timedelta
 from pathlib import Path
+from typing import AnyStr
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +29,7 @@ SECRET_KEY = 'django-insecure-b5$g4f)4o#1%-rkzpvps8jl@oj+it-ig9%#49yy_5#bn^ovbq(
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost','grocery-nepal.herokuapp.com','grocery-nepal.azurewebsites.net']
-CSRF_TRUSTED_ORIGINS = ['*']
+# CSRF_TRUSTED_ORIGINS = AnyStr
 
 # Application definition
 
@@ -84,6 +86,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'ecommerce.middle.DisableCSRFMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
