@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-b5$g4f)4o#1%-rkzpvps8jl@oj+it-ig9%#49yy_5#bn^ovbq(
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost','grocery-nepal.herokuapp.com','grocery-nepal.azurewebsites.net']
-
+CSRF_TRUSTED_ORIGINS = ['*']
 
 # Application definition
 
